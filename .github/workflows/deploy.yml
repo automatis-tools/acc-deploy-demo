@@ -1,0 +1,16 @@
+name: deploy
+on:
+  workflow_dispatch:
+    inputs:
+      feature:
+        description: Feature to ship
+        required: true
+        type: choice
+        options: [search, export, alerts]
+jobs:
+  production:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Deploying ${{ inputs.feature }} to production"
+      - run: sleep 20
+      - run: echo "${{ inputs.feature }} is live"
