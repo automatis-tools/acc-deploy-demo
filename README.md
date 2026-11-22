@@ -12,10 +12,10 @@ deploys overlap, it records a `COLLISION` line.
 Install ACC and connect your clients:
 
     npm install -g agents-can-communicate
-    acc install --adapter claude_code --adapter codex --adapter antigravity --delivery actionable
+    acc install --adapter claude_code --adapter codex --adapter antigravity
 
-Live delivery is off by default. `--delivery actionable` lets a request or a question wake an idle
-session.
+Since ACC 0.15.0, live delivery is on by default, so a request or a question wakes an idle session.
+If you turned it off earlier with `--delivery off`, add `--delivery actionable` to this command.
 
 Open Claude Code, Codex and Antigravity in this folder, each in its own terminal. Trust ACC's hooks
 when Codex asks, and allow `./deploy.sh` when a client asks. Send each one its starting prompt.
